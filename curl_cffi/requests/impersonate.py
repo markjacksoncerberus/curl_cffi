@@ -275,15 +275,16 @@ def toggle_extension(curl, extension_id: int, enable: bool):
             curl.setopt(CurlOpt.ECH, "")
     # compress certificate
     elif extension_id == 27:
-        if enable:
-            warnings.warn(
-                "Cert compression setting to brotli, "
-                "you had better specify which to use: zlib/brotli",
-                stacklevel=1,
-            )
-            curl.setopt(CurlOpt.SSL_CERT_COMPRESSION, "brotli")
-        else:
-            curl.setopt(CurlOpt.SSL_CERT_COMPRESSION, "")
+        pass
+        # if enable:
+        #     warnings.warn(
+        #         "Cert compression setting to brotli, "
+        #         "you had better specify which to use: zlib/brotli",
+        #         stacklevel=1,
+        #     )
+        #     curl.setopt(CurlOpt.SSL_CERT_COMPRESSION, "brotli")
+        # else:
+        #     curl.setopt(CurlOpt.SSL_CERT_COMPRESSION, "")
     # ALPS: application settings
     elif extension_id == 17513:
         if enable:
